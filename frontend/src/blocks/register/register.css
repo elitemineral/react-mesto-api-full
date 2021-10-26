@@ -1,0 +1,12 @@
+.register {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 880px) {
+  .register {
+    padding-top: 26px;
+  }
+}

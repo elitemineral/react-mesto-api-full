@@ -1,0 +1,12 @@
+.cards__like-counter {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  display: inline-block;
+  max-width: 70px;
+
+  color: #000;
+  font-size: 13px;
+  line-height: 16px;
+}

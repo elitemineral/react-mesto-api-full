@@ -1,0 +1,6 @@
+.header__burger-item {
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  transition: transform .3s ease;
+}

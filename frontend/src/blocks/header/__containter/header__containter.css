@@ -1,0 +1,21 @@
+.header__containter {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 27px 0;
+}
+
+@media (min-width: 425px) {
+  .header__containter {
+    padding: 0 37px 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .header__containter {
+    flex-direction: row;
+    padding: 0;
+    border-top: none;
+  }
+}

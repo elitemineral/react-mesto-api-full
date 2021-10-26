@@ -1,0 +1,13 @@
+.profile__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+@media (min-width: 619px) {
+  .profile__container {
+    justify-content: flex-start;
+    margin-bottom: 16px;
+  }
+}

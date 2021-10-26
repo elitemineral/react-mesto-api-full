@@ -1,0 +1,10 @@
+.form__input_theme_dark {
+  padding: 5px 2px 8px;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #ccc;
+
+  color: #ccc;
+  outline-color: #fefefe;
+  background-color: #000;
+
+}
