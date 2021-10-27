@@ -4,6 +4,8 @@ const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 
+const { requestLogger, errorLogger } = require('./middlewares/logger');
+
 const {
   loginInfoValidator,
   newUserInfoValidator,
@@ -28,6 +30,8 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
 
 const app = express();
 
+app.use(requestLogger);
+
 app.use('*', cors(corsOptions));
 app.use(helmet());
 app.use(cookieParser());
@@ -40,6 +44,8 @@ app.get('/logout', logout);
 
 app.use('/', auth, usersRouter, cardsRouter);
 app.use((_req, _res, next) => next(new NotFoundError('Запрашиваемая страница не найдена')));
+
+app.use(errorLogger);
 app.use(errors);
 
 // eslint-disable-next-line no-unused-vars
