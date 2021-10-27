@@ -24,10 +24,6 @@ const NotFoundError = require('./errors/NotFoundError');
 
 const { PORT = 3000 } = process.env;
 
-mongoose.connect('mongodb://localhost:27017/mestodb', {
-  useNewUrlParser: true,
-});
-
 const app = express();
 
 app.use(requestLogger);
@@ -61,6 +57,6 @@ app.use((err, _req, res, _next) => {
     });
 });
 
-app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT}`);
-});
+mongoose.connect('mongodb://localhost:27017/mestodb')
+  .then(() => app.listen(PORT, () => console.log(`App listening on port ${PORT}`)))
+  .catch((err) => console.log(err));
