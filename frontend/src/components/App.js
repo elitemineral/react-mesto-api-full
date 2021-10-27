@@ -55,9 +55,7 @@ function App() {
       setLoggedIn(true);
       hst.push(appRoutes.root);
     })
-    .catch((err) => {
-      console.log(err);
-    });
+    .catch((err) => console.log(err));
   }, [hst]);
 
   useEffect(() => {

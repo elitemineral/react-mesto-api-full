@@ -50,7 +50,7 @@ app.use((err, _req, res, _next) => {
     .status(statusCode)
     .send({
       message: statusCode === statusCodes.serverError
-        ? 'На сервере произошла ошибка'
+        ? message
         : message,
     });
 });
