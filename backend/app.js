@@ -15,7 +15,7 @@ const cardsRouter = require('./routes/cards');
 const auth = require('./middlewares/auth');
 const errors = require('./middlewares/celebrateErrorHandler');
 
-const { login, createUser } = require('./controllers/users');
+const { login, logout, createUser } = require('./controllers/users');
 const { statusCodes, corsOptions } = require('./utils/constants');
 
 const NotFoundError = require('./errors/NotFoundError');
@@ -36,6 +36,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.post('/signin', loginInfoValidator(), login);
 app.post('/signup', newUserInfoValidator(), createUser);
+app.get('/logout', logout);
 
 app.use('/', auth, usersRouter, cardsRouter);
 app.use((_req, _res, next) => next(new NotFoundError('Запрашиваемая страница не найдена')));

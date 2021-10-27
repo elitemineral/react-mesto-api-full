@@ -29,10 +29,17 @@ class Api {
     }));
   }
 
+  logout = () => {
+    return this._promiseHandler(fetch(`${this._apiUrl}/logout`, {
+      method: 'GET',
+      credentials: 'include'
+    }));
+  }
+
   getUserInfo() {
     return this._promiseHandler(fetch(`${this._apiUrl}/users/me`, {
       method: 'GET',
-      credentials: 'include'
+      credentials: 'include',
     }));
   }
 

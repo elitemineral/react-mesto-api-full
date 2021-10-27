@@ -11,11 +11,7 @@ const HeaderMenu = (props) => {
 
   const { isMobile, isInactive, loggedIn } = props;
 
-  const signOut = () => {
-    localStorage.removeItem('jwt');
-    handleLogout();
-    hst.push(appRoutes.signIn);
-  }
+  const signOut = () => handleLogout();
 
   return (
     <nav

@@ -136,7 +136,13 @@ function App() {
     .catch(() => showInfoToolTip(true));
   }
 
-  const handleLogout = () => setLoggedIn(false);
+  const handleLogout = () => {
+    api.logout()
+    .then(() => {
+      setLoggedIn(false);
+      hst.push(appRoutes.signIn);
+    });
+  }
 
   return (
     <AppContext.Provider value={{currentUser, loggedIn, showInfoToolTip, handleAuthorize, handleRegister, handleLogout}}>

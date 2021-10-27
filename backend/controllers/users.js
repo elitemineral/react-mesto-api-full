@@ -24,6 +24,11 @@ module.exports.login = (req, res, next) => {
     .catch(next);
 };
 
+// eslint-disable-next-line no-unused-vars
+module.exports.logout = (_req, res, _next) => {
+  res.clearCookie('jwt').send({ message: 'Выход осуществлен' });
+};
+
 module.exports.me = (req, res, next) => {
   User.findById(req.user._id)
     .orFail()
