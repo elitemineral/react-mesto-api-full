@@ -7,7 +7,6 @@ module.exports = (req, _res, next) => {
   let payload;
 
   try {
-    console.log(NODE_ENV);
     payload = jwt.verify(req.cookies.jwt, NODE_ENV === 'production' ? JWT_SECRET : 'some-secret-key');
   } catch (err) {
     throw new UnauthorizedError('С токеном что-то не так');
