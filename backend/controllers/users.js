@@ -29,8 +29,11 @@ module.exports.login = (req, res, next) => {
 };
 
 // eslint-disable-next-line no-unused-vars
-module.exports.logout = (_req, res, _next) => {
-  res.clearCookie('jwt').send({ message: 'Выход осуществлен' });
+module.exports.logout = (_req, res) => {
+  res.clearCookie('jwt', {
+    secure: true,
+    sameSite: 'none',
+  }).send({ message: 'Выход осуществлен' });
 };
 
 module.exports.me = (req, res, next) => {
