@@ -4,6 +4,8 @@ const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 
+require('dotenv').config();
+
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const {

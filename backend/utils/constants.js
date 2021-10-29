@@ -16,7 +16,6 @@ const corsOptions = {
   origin: [
     'http://localhost:3000',
     'http://178.154.220.21',
-    'https://178.154.220.21',
     'http://it-limon.nomoredomains.rocks',
     'https://it-limon.nomoredomains.rocks',
   ],
