@@ -15,6 +15,7 @@ const statusCodes = {
 const corsOptions = {
   origin: [
     'http://localhost:3000',
+    'http://it-limon.nomoredomains.rocks',
     'https://it-limon.nomoredomains.rocks',
   ],
   methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
