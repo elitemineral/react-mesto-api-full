@@ -52,7 +52,7 @@ app.use((err, _req, res, _next) => {
     .status(statusCode)
     .send({
       message: statusCode === statusCodes.serverError
-        ? message
+        ? 'На сервере произошла ошибка'
         : message,
     });
 });
