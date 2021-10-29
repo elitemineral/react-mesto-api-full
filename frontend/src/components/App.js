@@ -51,7 +51,7 @@ function App() {
     Promise.all(promises)
     .then(([userInfo, initialCards]) => {
       setCurrentUser(userInfo);
-      setCards(initialCards);
+      setCards(initialCards.reverse());
       setLoggedIn(true);
       hst.push(appRoutes.root);
     })
