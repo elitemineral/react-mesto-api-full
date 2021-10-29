@@ -38,7 +38,6 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get('/crash-test', () => {
   setTimeout(() => {
-    console.log(123);
     throw new Error('Сервер сейчас упадёт');
   }, 0);
 });
