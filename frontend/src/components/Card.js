@@ -7,10 +7,12 @@ function Card(props) {
     name,
     link,
     likes,
+    owner
   } = props.data;
 
   const currentUser = useContext(AppContext).currentUser;
 
+  const isOwn = owner._id === currentUser._id;
   const isLiked = likes.some(like => like._id === currentUser._id);
 
   const handleCardClick = () => props.onCardClick({ name, link });
@@ -31,13 +33,13 @@ function Card(props) {
           </button>
           <span className='cards__like-counter'>{likes.length}</span>
         </div>
-
-        <button
-          className='button cards__button-delete'
-          type='button'
-          onClick={handleDeleteClick}
-          aria-label='Удалить'>
-        </button>
+        {isOwn &&
+          <button
+            className='button cards__button-delete'
+            type='button'
+            onClick={handleDeleteClick}
+            aria-label='Удалить'>
+          </button>}
     </li>
   );
 }
